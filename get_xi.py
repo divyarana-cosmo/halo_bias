@@ -114,14 +114,15 @@ def get_plots(xx, yy, logM0, logM1):
 
 
     plt.subplot(2,2,3)
-    for jjx in np.random.randint(njacks, size=10):
+    for jjx in np.random.randint(1,njacks, size=10):
         x0 = jjx*len(rad); x1 = (jjx+1)* len(rad)
-        plt.plot(rad,xi[x0:x1])
+        plt.plot(rad,xi[x0:x1]/xi[0:int(len(rad))])
     plt.xscale('log')
-    plt.yscale('log')
+    #plt.yscale('log')
     plt.xlabel(r'$r \, [{\rm h^{-1}Mpc}]$')
-    plt.ylabel(r'$\xi(r)$')
-    plt.ylim(0.05,2)
+    plt.ylabel('ratio')
+    #plt.ylabel(r'$\xi(r)$')
+    #plt.ylim(0.05,2)
 
 
     xi = xi.reshape((njacks, len(rad)))
