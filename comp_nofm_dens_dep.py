@@ -13,14 +13,14 @@ for mm in xx:
     yy = np.append(yy,a.nofm(mm,0.0))
 
 plt.subplot(2,2,1)
-plt.plot(xx, yy, '.')
+plt.plot(xx, yy, '.', label='Tinker10')
 
 delta_thres = np.linspace(-1,1,5)
 for ff in delta_thres:
     yy = np.array([])
     for mm in xx:
         yy = np.append(yy,a.MF_TI10_dens_dep(mm,0.0,ff))
-    plt.plot(xx, yy, label=r'$\delta_{thres} = %2.2f$'%ff)
+    plt.plot(xx, yy, label=r'$\delta_{\rm thres} = %2.2f$'%ff)
 
 plt.xlabel(r'$M_{\rm h}$')
 plt.ylabel(r'$n(M_{\rm h})$')
